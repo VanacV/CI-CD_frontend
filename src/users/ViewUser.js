@@ -18,7 +18,7 @@ export default function ViewUser() {
     },[])
 
     const loadUser = async() =>{
-        const result = await axios.get(`http://localhost:8080/user/${id}`,user)
+        const result = await axios.get(`https://ci-cdbackend-production.up.railway.app/user/${id}`,user) // http://localhost:8080
         setUser(result.data)
     }
 

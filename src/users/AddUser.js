@@ -87,7 +87,7 @@ export default function AddUser() {
 
        
         if (validateForm()) {
-            await axios.post('http://localhost:8080/users', user);
+            await axios.post('https://ci-cdbackend-production.up.railway.app/users', user); //  http://localhost:8080
             navigate('/');
         }
     };

@@ -85,13 +85,13 @@ export default function EditUser() {
         e.preventDefault();
 
         if (validateForm()) {
-            await axios.put(`http://localhost:8080/users/${id}`, user);
+            await axios.put(`https://ci-cdbackend-production.up.railway.app/users/${id}`, user); //  http://localhost:8080
             navigate('/');
         }
     };
 
     const loadUser = async () => { 
-        const result = await axios.get(`http://localhost:8080/user/${id}`); 
+        const result = await axios.get(`https://ci-cdbackend-production.up.railway.app/user/${id}`); //http://localhost:8080
         setUser({ ...result.data, date_born: result.data.date_born ? new Date(result.data.date_born) : null }); };
 
     return (
