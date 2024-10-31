@@ -18,11 +18,14 @@ export default function Home() {
     }, []);
 
     const loadUsers = async () => {
-        const result = await axios.get('https://ci-cdbackend-production.up.railway.app/allUsers',{
-            withCredentials:true
+        try{const result = await axios.get('https://ci-cdbackend-production.up.railway.app/allUsers',{
+            withCredentials: true
         }); //http://localhost:8080/allUsers
         setUsers(result.data);
-        setFilteredUsers(result.data); 
+        setFilteredUsers(result.data);
+    }catch(error){
+        console.log("Error: ", error)
+    } 
     };
 
     const deleteUser = async (id) => {
