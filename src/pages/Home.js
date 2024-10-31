@@ -18,13 +18,17 @@ export default function Home() {
     }, []);
 
     const loadUsers = async () => {
-        const result = await axios.get('https://ci-cdbackend-production.up.railway.app/allUsers'); //http://localhost:8080/allUsers
+        const result = await axios.get('https://ci-cdbackend-production.up.railway.app/allUsers',{
+            withCredentials:true
+        }); //http://localhost:8080/allUsers
         setUsers(result.data);
         setFilteredUsers(result.data); 
     };
 
     const deleteUser = async (id) => {
-        await axios.delete(`https://ci-cdbackend-production.up.railway.app/user/${id}`); //http://localhost:8080/user/${id}
+        await axios.delete(`https://ci-cdbackend-production.up.railway.app/user/${id}`,{
+            withCredentials: true
+        }); //http://localhost:8080/user/${id}
         loadUsers(); 
     };
 
