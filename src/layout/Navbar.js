@@ -22,7 +22,7 @@ export default function Navbar() {
       
     </button>
 
-    <Link className="btn btn-success" to = "/adduser">Добавить пользователя</Link>
+    <Link className="btn btn-success" to = "/adduser">Я захотел кнопку по другому назвать</Link>
 
   </div>
 </nav>
