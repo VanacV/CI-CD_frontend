@@ -11,8 +11,6 @@ export default function Home() {
     const [startDate, setStartDate] = useState(null); 
     const [endDate, setEndDate] = useState(null); 
 
-    const { id } = useParams();
-
     useEffect(() => {
         loadUsers();
     }, []);
